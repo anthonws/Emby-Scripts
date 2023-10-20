@@ -1,0 +1,39 @@
+// CODE TO BE EXECUTED WITHIN BROWSER DEVELOPMENT TOOLS - CONSOLE
+// Besure to be already within the Garmin Connect, Workouts page, before executing this
+
+function deleteWorkout() {
+    // Find the "delete-workout" element and click it
+    const deleteWorkoutElement = document.querySelector('.delete-workout');
+
+    if (deleteWorkoutElement) {
+        deleteWorkoutElement.click();
+
+        // Wait for a short time to ensure the pop-up is fully loaded (adjust the delay as needed)
+        setTimeout(() => {
+            // Find and click the "Delete" button in the pop-up
+            const deleteButtonInPopup = document.querySelector('a.btn.btn-primary.js-saveBtn.btn-danger');
+            if (deleteButtonInPopup) {
+                deleteButtonInPopup.click();
+
+                // Wait for a short time to ensure the confirmation is processed (adjust the delay as needed)
+                setTimeout(() => {
+                    // Find the next "delete-workout" element
+                    const nextDeleteWorkoutElement = document.querySelector('.delete-workout');
+                    if (nextDeleteWorkoutElement) {
+                        // Call the function recursively to delete the next workout
+                        deleteWorkout();
+                    } else {
+                        console.log('No more "delete-workout" elements.');
+                    }
+                }, 1000); // Adjust the delay (in milliseconds) as needed
+            } else {
+                console.log('Delete button in the pop-up not found.');
+            }
+        }, 1000); // Adjust the delay (in milliseconds) as needed
+    } else {
+        console.log('No more "delete-workout" elements.');
+    }
+}
+
+// Start the process by calling the function
+deleteWorkout();
