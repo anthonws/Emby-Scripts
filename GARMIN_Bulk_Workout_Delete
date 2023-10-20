@@ -1,5 +1,6 @@
 // CODE TO BE EXECUTED WITHIN BROWSER DEVELOPMENT TOOLS - CONSOLE
 // Besure to be already within the Garmin Connect, Workouts page, before executing this
+// Inspired by https://blog.trainerday.com/garmin-connect-bulk-delete-workouts-from-your-training-library-25b2991ba2e6
 
 function deleteWorkout() {
     // Find the "delete-workout" element and click it
