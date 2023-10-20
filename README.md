@@ -1,5 +1,5 @@
-## Emby-Scripts
-Assorted Emby scripts that make my life easier and eventually can make yours too
+## Misc-Scripts
+Assorted scripts that made my life easier and eventually can make yours too
 
 ## License
 
